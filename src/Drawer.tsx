@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
-import { useLocation } from 'react-router-dom'
 
 interface DrawerProps {
   children: React.ReactNode
@@ -12,11 +11,6 @@ interface DrawerProps {
 
 const Drawer = ({ children, selector, isOpen, onClose }: DrawerProps) => {
   const [mounted, setMounted] = useState(false)
-  const location = useLocation()
-
-  useEffect(() => {
-    onClose()
-  }, [location, onClose])
 
   useEffect(() => {
     setMounted(true)

@@ -1,13 +1,26 @@
 import React, { useRef, useState } from 'react'
 import Drawer from './Drawer'
 import SuperBoostPopup from './SuperBoostPopup'
-import { BoostpowButtonOptions } from '.'
 import wrapRelayx from 'stag-relayx'
+import './tailwind.css'
 
 export interface BoostBuyResult {
   txid: string
   txhex: string
   job: any
+}
+
+export interface BoostpowButtonOptions {
+  content: string
+  value: number
+  difficulty?: number
+  tag?: string
+  catgory?: string
+  onClick?: () => void
+  onSending?: () => void
+  onError?: (Error: Error) => void
+  onSuccess?: (result: BoostBuyResult) => void
+  showDifficulty?: boolean
 }
 
 const BoostButton = ({ content, difficulty, showDifficulty, onSending, onSuccess, onError }: BoostpowButtonOptions) => {
@@ -151,7 +164,8 @@ const BoostButton = ({ content, difficulty, showDifficulty, onSending, onSuccess
   }
 
   return (
-    <>
+    <>     
+      <div id='superBoostPopupControler' />
       <div
         onClick={handleBoost}
         onMouseDown={handleOnMouseDown}
