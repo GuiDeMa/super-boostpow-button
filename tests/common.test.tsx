@@ -11,10 +11,8 @@ import { BoostButton } from '../src'
   })
 }) */
 
-
 describe('default', () => {
   test('sums 1 and 1 together', () => {
-      expect(1 + 1).toBe(2) 
+    expect(1 + 1).toBe(2)
   })
 })
-

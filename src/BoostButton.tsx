@@ -164,7 +164,7 @@ const BoostButton = ({ content, difficulty, showDifficulty, onSending, onSuccess
   }
 
   return (
-    <>     
+    <>
       <div id='superBoostPopupControler' />
       <div
         onClick={handleBoost}
